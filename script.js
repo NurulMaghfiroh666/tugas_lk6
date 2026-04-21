@@ -77,3 +77,27 @@ regForm.addEventListener('submit', (e) => {
 	`;
 	document.head.appendChild(s);
 })();
+
+// Toggle tema gelap / terang
+(function initTheme() {
+	const btn = document.getElementById('themeToggle');
+	const saved = localStorage.getItem('theme');
+
+	if (saved === 'dark') {
+		document.documentElement.setAttribute('data-theme', 'dark');
+		btn.textContent = '☀️';
+	}
+
+	btn.addEventListener('click', () => {
+		const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+		if (isDark) {
+			document.documentElement.removeAttribute('data-theme');
+			btn.textContent = '🌙';
+			localStorage.setItem('theme', 'light');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			btn.textContent = '☀️';
+			localStorage.setItem('theme', 'dark');
+		}
+	});
+})();
