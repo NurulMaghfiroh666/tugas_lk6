@@ -29,19 +29,30 @@ function showNotification(text, type = 'success', timeout = 3000) {
 }
 
 // preview real time
-nameInput.addEventListener('input', () => {
+const updatePreview = () => {
 	previewName.textContent = `Nama: ${nameInput.value || '-'} `;
-});
-
-messageInput.addEventListener('input', () => {
+	document.getElementById('preview-email').textContent = `Email: ${emailInput.value || '-'} `;
+	document.getElementById('preview-phone').textContent = `No HP: ${phoneInput.value || '-'} `;
+	document.getElementById('preview-category').textContent = `Kategori: ${categoryInput.value || '-'} `;
 	previewMessage.textContent = `Pesan: ${messageInput.value || '-'} `;
-});
+};
+
+nameInput.addEventListener('input', updatePreview);
+emailInput.addEventListener('input', updatePreview);
+phoneInput.addEventListener('input', updatePreview);
+categoryInput.addEventListener('change', updatePreview);
+messageInput.addEventListener('input', updatePreview);
 
 // tombol tambahan konten
 toggleBtn.addEventListener('click', () => {
 	const isHidden = moreContent.style.display === 'none' || moreContent.style.display === '';
 	moreContent.style.display = isHidden ? 'block' : 'none';
 	toggleBtn.textContent = isHidden ? 'Sembunyikan' : 'Tampilkan lebih';
+});
+
+// Download PDF (via Print)
+document.getElementById('downloadPdf').addEventListener('click', () => {
+	window.print();
 });
 
 // masukkan form
