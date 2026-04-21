@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas LK4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Notification container -->
+  <div id="notification-container" aria-live="polite"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <!-- KIRI -->
+      <h1 class="logo">LOREM INSUN KUOSO</h1>
+
+      <!-- KANAN -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#skill">Skill</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- TOMBOL MENU GARIS 3 -->
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="foto.jpg" alt="Profile Image">
+    <p>Human WNI</p>
+    <button id="toggleBtn" style="margin-top:10px;">Tampilkan lebih</button>
+    <div id="moreContent" style="display:none; margin-top:10px;">
+      <p>nasgor 1 porsi enak banget.</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Tentang -->
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <article>
+        <p>
+          Saya adalah ***** yang mempunyai skill bertahan hidup 20th di negara yang niskala.
+        </p>
+      </article>
+    </section>
+
+    <!-- Skill -->
+    <section id="skill">
+      <h2>Keahlian</h2>
+
+      <div class="skill-container">
+        <article>
+          <h3>Frontend Developer</h3>
+          <ul>
+            <li>HTML (dasar)</li>
+            <li>CSS (Flexbox dan Grid)</li>
+            <li>Responsive Design</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Tools</h3>
+          <ul>
+            <li>Figma</li>
+            <li>Visual Studio Code</li>
+            <li>Canva</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Project -->
+    <section id="proyek">
+      <h2>Proyek</h2>
+
+      <div class="project-container">
+        <article>
+          <h3>Siakad</h3>
+          <p>Aplikasi pengelolaan data akademik.</p>
+        </article>
+
+        <article>
+          <h3>Web desa</h3>
+          <p>Aplikasi web untuk menampilkan informasi desa.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+      <h2>Kontak</h2>
+      <article>
+        <p>Email: maghf2010@gmail.com</p>
+        <p>No HP: +6285xxxx</p>
+      </article>
+    </section>
+
+    <!-- Form -->
+    <section id="form">
+      <h2>Form Pendaftaran</h2>
+      <form id="regForm">
+        <label>Nama:</label>
+        <input id="name" type="text" required>
+
+        <label>Email:</label>
+        <input id="email" type="email" required>
+
+        <label>No HP:</label>
+        <input id="phone" type="tel" required>
+
+        <label>Kategori:</label>
+        <select id="category" required>
+          <option value="">-- Pilih --</option>
+          <option>Web Development</option>
+          <option>Desain</option>
+          <option>Konsultasi</option>
+        </select>
+
+        <label>Pesan:</label>
+        <textarea id="message" rows="4"></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+
+      <!-- Live preview -->
+      <div id="preview" style="margin-top:12px;">
+        <h3>Preview Input</h3>
+        <p id="preview-name">Nama: -</p>
+        <p id="preview-message">Pesan: -</p>
+      </div>
+
+      <!-- Submissions list -->
+      <div style="margin-top:12px;">
+        <h3>Pendaftar</h3>
+        <ul id="submissions"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Lorem Insun</p>
+  </footer>
+
+  <!-- SCRIPT HAMBURGER -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu   = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+  </script>
+
+  <!-- Project script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
